@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Faiza Queen Academy</title>
+<style>
+:root{--navy:#0b2545;--teal:#13a89e;--teal2:#e3f6f4;--bg:#f6f9fb;--card:#fff;--tx:#1c2733;--mu:#5b6b7a;--bd:#d8e2ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1626;--card:#10233b;--tx:#e8eef4;--mu:#9db0c2;--bd:#22405f;--teal2:#0f3a42}}
+:root[data-theme="dark"]{--bg:#0a1626;--card:#10233b;--tx:#e8eef4;--mu:#9db0c2;--bd:#22405f;--teal2:#0f3a42}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 "Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{background:var(--navy);color:#fff;padding:12px 16px;position:sticky;top:0;z-index:5}
+.top{max-width:1050px;margin:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.logo{font:700 1.5rem Georgia,"Times New Roman",serif;color:#fff;text-decoration:none;letter-spacing:.3px}
+.logo i{color:var(--teal);font-style:normal}
+#q{flex:1 1 260px;max-width:460px;padding:10px 14px;border-radius:24px;border:2px solid var(--teal);font-size:1rem;background:#fff;color:#0b2545}
+nav{max-width:1050px;margin:8px auto 0;display:flex;gap:6px;overflow-x:auto;padding-bottom:2px}
+nav a{color:#cfe9ee;text-decoration:none;font-size:.85rem;padding:4px 10px;border-radius:14px;white-space:nowrap}
+nav a:hover,nav a.on{background:var(--teal);color:#fff}
+main{max-width:1050px;margin:auto;padding:18px 14px 50px}
+.hero{background:linear-gradient(135deg,var(--navy),#0f4c5c);color:#fff;border-radius:16px;padding:28px 22px;margin-bottom:22px}
+.hero h1{margin:0 0 6px;font:700 clamp(1.6rem,5vw,2.4rem) Georgia,serif}
+.hero p{margin:4px 0;max-width:640px;color:#d6edf0}
+.btn{display:inline-block;background:var(--teal);color:#fff;border:0;padding:10px 18px;border-radius:8px;font-size:1rem;cursor:pointer;text-decoration:none;margin:6px 6px 0 0}
+.btn.alt{background:transparent;border:2px solid var(--teal);color:var(--teal)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #ffb703;outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-left:5px solid var(--teal);border-radius:10px;padding:14px;text-decoration:none;color:var(--tx);display:block}
+.card:hover{border-color:var(--teal);box-shadow:0 3px 12px rgba(19,168,158,.25)}
+.card b{display:block;color:var(--navy);font-size:1.05rem}
+@media(prefers-color-scheme:dark){.card b{color:#7fe3da}}
+.card span{color:var(--mu);font-size:.9rem}
+h2{color:var(--navy);margin:22px 0 8px}h3{margin:8px 0}
+@media(prefers-color-scheme:dark){h2{color:#7fe3da}}
+details{background:var(--card);border:1px solid var(--bd);border-radius:8px;margin:8px 0;padding:8px 14px}
+summary{cursor:pointer;font-weight:600;color:var(--navy)}
+@media(prefers-color-scheme:dark){summary{color:#7fe3da}}
+.note{background:var(--teal2);border-radius:8px;padding:10px 14px;font-size:.92rem;margin:12px 0}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:560px;background:var(--card)}
+th,td{border:1px solid var(--bd);padding:7px 9px;text-align:left;font-size:.9rem;vertical-align:top}th{background:var(--navy);color:#fff}
+.opt{display:block;width:100%;text-align:left;margin:7px 0;padding:11px 14px;border:2px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font-size:1rem;cursor:pointer}
+.opt:hover{border-color:var(--teal)}.opt.ok{background:#d9f5e3;border-color:#1b9e4b;color:#0b3d1c}.opt.no{background:#fde0e0;border-color:#d33;color:#5a0d0d}
+.bar{height:8px;background:var(--bd);border-radius:4px;margin:8px 0}.bar div{height:100%;background:var(--teal);border-radius:4px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+select{padding:9px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:1rem}
+footer{text-align:center;color:var(--mu);font-size:.85rem;padding:20px 14px}
+</style></head><body>
+<header><div class="top"><a class="logo" href="#/">Faiza <i>Queen</i> Academy</a>
+<input id="q" type="search" placeholder="Search lessons, topics, tenses…" aria-label="Search"></div>
+<nav id="nav"></nav></header>
+<main id="app"></main>
+<footer>Faiza Queen Academy — free for every student. No sign-up, no login, no OTP.<br>All practice questions are original and written for practice; they are not official past-paper questions.</footer>
+<script>
+const S=[
+["etea","ETEA Test Preparation","Biology, Chemistry, Physics, English mock tests"],
+["mdcat","MDCAT Preparation","Bio, Chem, Physics, English, Logical Reasoning"],
+["biology","Biology","1st & 2nd Year notes and MCQs"],
+["physics","Physics","Formulas, solved numericals, MCQs"],
+["chemistry","Chemistry","Equations, concepts, quizzes"],
+["english","English Learning","Speaking, vocabulary, grammar, mistakes"],
+["tenses","12 English Tenses","Formulas, examples, exercises"],
+["gk","Pakistan General Knowledge","Pakistan Studies, science, computer"],
+["mcq","MCQ Practice Centre","Timed tests, scores, retry"],
+["library","Study Library","Notes, summaries, revision in one place"]];
+const L={
+biology:[
+["1st Year — The Cell","<b>Cell theory:</b> all living things are made of cells; the cell is the basic unit of life; cells arise from pre-existing cells. <b>Prokaryotes</b> (bacteria) have no membrane-bound nucleus; <b>eukaryotes</b> do. Mitochondria make ATP (the 'powerhouse'); ribosomes make proteins; chloroplasts carry out photosynthesis."],
+["1st Year — Biological Molecules","Carbohydrates (glucose C₆H₁₂O₆) give energy. Proteins are chains of amino acids joined by <b>peptide bonds</b>. Lipids store energy and form membranes. <b>Enzymes</b> are biological catalysts that lower activation energy; they are affected by temperature and pH."],
+["2nd Year — Homeostasis","Homeostasis is keeping a steady internal environment (temperature, water, pH). Kidneys filter blood in nephrons; the hormone ADH controls water reabsorption. Negative feedback reverses a change."],
+["2nd Year — Inheritance","Mendel's laws: <b>segregation</b> and <b>independent assortment</b>. A monohybrid cross Tt × Tt gives a 3:1 phenotypic ratio; a dihybrid cross gives 9:3:3:1. <b>DNA</b> is a double helix of nucleotides (A–T, G–C), described by Watson and Crick (1953)."]],
+physics:[
+["1st Year — Equations of Motion","<b>v = u + at</b><br><b>s = ut + ½at²</b><br><b>v² = u² + 2as</b><br><i>Solved:</i> A car starts from rest (u=0) with a=2 m/s². After t=5 s: v = 0+2×5 = <b>10 m/s</b>; s = ½×2×25 = <b>25 m</b>."],
+["1st Year — Force, Work & Energy","<b>F = ma</b> (N). Work <b>W = Fd cosθ</b> (J). Kinetic energy <b>KE = ½mv²</b>. Power <b>P = W/t</b> (watt).<br><i>Solved:</i> m=4 kg, v=3 m/s → KE = ½×4×9 = <b>18 J</b>."],
+["2nd Year — Current Electricity","<b>Ohm's law: V = IR.</b> Power <b>P = VI</b>. Series: R = R₁+R₂. Parallel: 1/R = 1/R₁+1/R₂.<br><i>Solved:</i> V=12 V, R=4 Ω → I = 12/4 = <b>3 A</b>; P = 12×3 = <b>36 W</b>."],
+["2nd Year — Electrostatics","Coulomb's law: <b>F = k q₁q₂ / r²</b> with k ≈ 9×10⁹ N·m²/C². Electric field <b>E = F/q</b>. Doubling the distance makes the force one-fourth."]],
+chemistry:[
+["1st Year — Mole Concept","<b>Moles n = mass / molar mass.</b> One mole contains 6.022×10²³ particles (Avogadro's number).<br><i>Solved:</i> 18 g of H₂O (M=18 g/mol) = <b>1 mole</b>."],
+["1st Year — Gas Laws","Boyle: P₁V₁ = P₂V₂ (constant T). Charles: V/T = constant (constant P). Ideal gas: <b>PV = nRT</b>.<br>Equation: 2H₂ + O₂ → 2H₂O"],
+["2nd Year — Acids, Bases & pH","<b>pH = −log[H⁺]</b>. pH below 7 is acidic, 7 neutral, above 7 basic.<br>Neutralisation: <b>NaOH + HCl → NaCl + H₂O</b>"],
+["2nd Year — Organic Basics","Alkanes: CₙH₂ₙ₊₂ (methane CH₄, ethane C₂H₆). Alkenes: CₙH₂ₙ (double bond). Alkynes: CₙH₂ₙ₋₂ (triple bond).<br>Combustion: <b>CH₄ + 2O₂ → CO₂ + 2H₂O</b>"]],
+english:[
+["Speaking: Daily Conversation","<b>Greeting:</b> 'Hello, how are you?' — 'I'm fine, thank you. And you?'<br><b>Shop:</b> 'How much is this?' — 'It is two hundred rupees.'<br><b>Asking help:</b> 'Excuse me, could you help me, please?'<br>Tip: speak 5 sentences aloud every day, even alone."],
+["Vocabulary Builder","<b>Begin</b> = start · <b>Brave</b> = not afraid · <b>Honest</b> = truthful · <b>Improve</b> = make better · <b>Prepare</b> = get ready · <b>Success</b> = achieving a goal. Make one sentence for every new word."],
+["Pronunciation Practice","<b>Wednesday</b> = WENZ-day · <b>comfortable</b> = KUMF-ter-bul · <b>pharmacy</b> = FAR-ma-see · <b>vegetable</b> = VEJ-ta-bul. Say each word slowly three times, then in a sentence."],
+["Grammar & Sentence Formation","Basic order: <b>Subject + Verb + Object</b> — 'Ali reads books.' Use <i>a</i> before consonant sounds, <i>an</i> before vowel sounds (an apple, a university). He/She/It takes verb+s in present simple."],
+["Common Mistakes","✗ 'I am agree.' ✓ 'I agree.'<br>✗ 'He don't know.' ✓ 'He doesn't know.'<br>✗ 'I have 20 years.' ✓ 'I am 20 years old.'<br>✗ 'More better.' ✓ 'Better.'"]],
+gk:[
+["Pakistan Studies & History","Pakistan came into being on <b>14 August 1947</b>. The Lahore (Pakistan) Resolution was passed on <b>23 March 1940</b>. Quaid-e-Azam Muhammad Ali Jinnah was the founder. The current Constitution was adopted in <b>1973</b>."],
+["Geography","Capital: <b>Islamabad</b>. Four provinces: Punjab, Sindh, Khyber Pakhtunkhwa, Balochistan. Longest river: <b>Indus</b>. <b>K2</b> (8,611 m) is the highest peak. Urdu is the national language."],
+["General Science & Computer","Water is H₂O; the human heart has 4 chambers; light travels at about 3×10⁸ m/s. <b>CPU</b> = brain of the computer; <b>RAM</b> = temporary memory; <b>URL</b> = web address."]],
+logic:[
+["Logical Reasoning Methods","<b>Series:</b> 2, 4, 8, 16, ? → multiply by 2 → 32. <b>Analogy:</b> Pen : Write :: Knife : Cut. <b>Odd one out:</b> find the item that does not share the group's property. Practise 10 questions a day."]],
+exam:[
+["How to use this section","Test boards publish and update syllabi and test patterns (PMDC/NMDCAT for MDCAT; ETEA for ETEA tests). <b>Always confirm the current syllabus and format from the official website before you study.</b> Study chapter by chapter using the subject sections, then take the mock tests below."]]
+};
+const T=[
+["Present Simple","S + V1 (s/es)","She plays cricket.","She does not play cricket.","Does she play cricket?"],
+["Present Continuous","S + is/am/are + V-ing","She is playing.","She is not playing.","Is she playing?"],
+["Present Perfect","S + has/have + V3","She has played.","She has not played.","Has she played?"],
+["Present Perfect Continuous","S + has/have been + V-ing","She has been playing for an hour.","She has not been playing.","Has she been playing?"],
+["Past Simple","S + V2","She played.","She did not play.","Did she play?"],
+["Past Continuous","S + was/were + V-ing","She was playing.","She was not playing.","Was she playing?"],
+["Past Perfect","S + had + V3","She had played.","She had not played.","Had she played?"],
+["Past Perfect Continuous","S + had been + V-ing","She had been playing.","She had not been playing.","Had she been playing?"],
+["Future Simple","S + will + V1","She will play.","She will not play.","Will she play?"],
+["Future Continuous","S + will be + V-ing","She will be playing.","She will not be playing.","Will she be playing?"],
+["Future Perfect","S + will have + V3","She will have played.","She will not have played.","Will she have played?"],
+["Future Perfect Continuous","S + will have been + V-ing","She will have been playing.","She will not have been playing.","Will she have been playing?"]];
+const Q={
+bio:[
+["Which organelle produces most of the cell's ATP?","Ribosome|Mitochondrion|Golgi body|Lysosome",1,"Mitochondria carry out aerobic respiration, producing most ATP."],
+["Enzymes work by…","raising activation energy|lowering activation energy|being used up|changing the reaction product",1,"Enzymes lower activation energy and are not used up."],
+["Bonds joining amino acids are called…","Glycosidic|Ester|Peptide|Hydrogen",2,"Peptide bonds link amino acids in proteins."],
+["Tt × Tt gives a phenotypic ratio of…","1:1|3:1|9:3:3:1|1:2:1 (phenotype)",1,"Dominant : recessive = 3 : 1."],
+["Which pairs are correct in DNA?","A–G, C–T|A–T, G–C|A–C, G–T|A–U, G–C",1,"DNA pairs adenine with thymine and guanine with cytosine."],
+["The hormone controlling water reabsorption in kidneys is…","Insulin|ADH|Thyroxine|Adrenaline",1,"ADH increases water reabsorption in the collecting duct."]],
+phy:[
+["A body starts from rest, a=3 m/s², t=4 s. Final speed?","7 m/s|12 m/s|1.3 m/s|48 m/s",1,"v = u + at = 0 + 3×4 = 12 m/s."],
+["SI unit of work is…","Newton|Watt|Joule|Pascal",2,"Work = force × distance, measured in joules."],
+["V=10 V, R=5 Ω. Current is…","50 A|2 A|0.5 A|15 A",1,"I = V/R = 10/5 = 2 A."],
+["If distance between two charges doubles, force becomes…","double|half|one-fourth|four times",2,"F ∝ 1/r²."],
+["KE of 2 kg mass moving at 4 m/s?","8 J|16 J|32 J|4 J",1,"½×2×16 = 16 J."],
+["Power P equals…","W×t|W/t|F/t|m×a",1,"Power is work done per unit time."]],
+chem:[
+["Number of moles in 36 g of water (M=18)?","1|2|3|0.5",1,"36 / 18 = 2 mol."],
+["pH of a neutral solution at 25°C is…","0|7|14|1",1,"Neutral water has pH 7."],
+["General formula of alkanes is…","CₙH₂ₙ|CₙH₂ₙ₋₂|CₙH₂ₙ₊₂|CₙHₙ",2,"Alkanes are saturated: CₙH₂ₙ₊₂."],
+["NaOH + HCl gives…","NaCl + H₂O|NaClO + H₂|Na + HCl|NaH + O₂",0,"A neutralisation reaction produces salt and water."],
+["Boyle's law states that at constant T…","V/T is constant|PV is constant|P/T is constant|V is constant",1,"Pressure and volume are inversely related."],
+["Avogadro's number is about…","6.022×10²³|3×10⁸|9×10⁹|1.6×10⁻¹⁹",0,"One mole contains 6.022×10²³ particles."]],
+eng:[
+["Choose correct: 'He ___ to school daily.'","go|goes|going|gone",1,"Third person singular takes verb+es."],
+["Correct sentence:","I am agree.|I agree.|I do agree to.|I am agreeing.",1,"'Agree' is a verb; no 'am' is needed."],
+["Synonym of 'brave':","afraid|courageous|lazy|weak",1,"Courageous means brave."],
+["'___ apple a day…'","A|An|The an|Some a",1,"'Apple' starts with a vowel sound, so use 'an'."],
+["Past tense of 'go' is…","goed|went|gone|going",1,"'Went' is V2; 'gone' is V3."]],
+ten:[
+["'She has finished her work.' is…","Past Simple|Present Perfect|Present Continuous|Future Perfect",1,"has + V3 = Present Perfect."],
+["'They were playing when it rained.' is…","Past Perfect|Past Continuous|Present Continuous|Past Simple",1,"was/were + V-ing = Past Continuous."],
+["Formula of Future Perfect is…","will + V1|will be + V-ing|will have + V3|had + V3",2,"Future Perfect: will have + V3."],
+["'I have been waiting for two hours.' is…","Present Perfect Continuous|Present Perfect|Past Continuous|Future Continuous",0,"have been + V-ing."],
+["Negative of 'She plays' is…","She not plays|She does not play|She did not play|She is not play",1,"Present simple negative uses does not + V1."],
+["'By next year, he will have graduated.' is…","Future Simple|Future Continuous|Future Perfect|Past Perfect",2,"will have + V3 = Future Perfect."]],
+gk:[
+["Pakistan came into existence on…","23 March 1940|14 August 1947|23 March 1956|6 September 1965",1,"14 August 1947."],
+["Longest river of Pakistan is…","Jhelum|Ravi|Indus|Chenab",2,"The Indus flows through the length of Pakistan."],
+["The highest peak in Pakistan is…","Nanga Parbat|K2|Tirich Mir|Rakaposhi",1,"K2 is 8,611 m high."],
+["Which is temporary computer memory?","ROM|RAM|Hard disk|CD",1,"RAM loses its data when power is off."],
+["The current Constitution of Pakistan was adopted in…","1956|1962|1973|1985",2,"The Constitution of 1973."]],
+logic:[
+["Series: 3, 6, 12, 24, ?","30|36|48|27",2,"Each number doubles."],
+["Pen : Write :: Knife : ?","Cut|Cook|Metal|Sharp",0,"A pen is used to write; a knife is used to cut."],
+["Odd one out:","Apple|Mango|Banana|Carrot",3,"Carrot is a vegetable; the others are fruits."],
+["If all roses are flowers and some flowers fade, which must be true?","All roses fade|Some roses fade|Roses are flowers|No rose fades",2,"Only 'roses are flowers' is guaranteed."]]
+};
+const NAMES={bio:"Biology",phy:"Physics",chem:"Chemistry",eng:"English",ten:"Tenses",gk:"Pakistan GK",logic:"Logical Reasoning"};
+const $=s=>document.querySelector(s),A=$("#app");
+const keysFor={etea:["bio","phy","chem","eng"],mdcat:["bio","chem","phy","eng","logic"],biology:["bio"],physics:["phy"],chemistry:["chem"],english:["eng"],tenses:["ten"],gk:["gk"],mcq:Object.keys(Q),library:Object.keys(Q)};
+$("#nav").innerHTML=S.map(s=>`<a href="#/s/${s[0]}" data-id="${s[0]}">${s[1].replace("Pakistan General Knowledge","Pakistan GK").replace(" Preparation","").replace(" Test","")}</a>`).join("");
+function lessons(id){const k={etea:["exam","biology","physics","chemistry","english"],mdcat:["exam","biology","physics","chemistry","english","logic"],library:["biology","physics","chemistry","english","gk","logic"]}[id]||[id];
+ return k.flatMap(x=>(L[x]||[]).map(l=>`<details><summary>${l[0]}</summary><p>${l[1]}</p></details>`)).join("")}
+function tenses(){return `<div class="tw"><table><tr><th>Tense</th><th>Formula</th><th>Example</th><th>Negative</th><th>Question</th></tr>${T.map(t=>"<tr>"+t.map(c=>`<td>${c}</td>`).join("")+"</tr>").join("")}</table></div>
+<h3>Exercise</h3><details><summary>Convert to negative & question: 'Ali eats an apple.' (show answer)</summary><p>Ali does not eat an apple. / Does Ali eat an apple?</p></details>
+<details><summary>Fill in: 'They ___ (play) since morning.' (show answer)</summary><p>have been playing (Present Perfect Continuous).</p></details>
+<details><summary>Fill in: 'I ___ (see) him yesterday.' (show answer)</summary><p>saw (Past Simple).</p></details>`}
+function home(){A.innerHTML=`<div class="hero"><h1>Faiza Queen Academy</h1><p>Free study, English speaking and exam preparation for Pakistani students. Open any lesson and start — no registration, Gmail or OTP needed.</p><a class="btn" href="#/s/mcq">Start a quiz</a><a class="btn alt" style="color:#fff" href="#/s/english">Learn English</a></div>
+<h2>Choose a subject</h2><div class="grid">${S.map(s=>`<a class="card" href="#/s/${s[0]}"><b>${s[1]}</b><span>${s[2]}</span></a>`).join("")}</div>`}
+function sec(id){const s=S.find(x=>x[0]==id);if(!s)return home();const k=keysFor[id];
+ let h=`<h2>${s[1]}</h2><p>${s[2]}.</p>`;
+ if(id=="etea"||id=="mdcat")h+=`<div class="note">Check the official website for the latest syllabus and test pattern. Our questions are <b>original practice questions</b>, not official past papers.</div>`;
+ h+=id=="tenses"?tenses():id=="mcq"?"":lessons(id);
+ if(id!="library"){h+=`<h2>Practice</h2><div class="row"><select id="ks">${k.length>1?`<option value="${k}">Mixed (${k.map(x=>NAMES[x]).join(", ")})</option>`:""}${k.map(x=>`<option value="${x}">${NAMES[x]}</option>`).join("")}</select><label><input type="checkbox" id="tm"> Timed</label><button class="btn" onclick="startQ($('#ks').value.split(','),$('#tm').checked)">Start ${id=="etea"||id=="mdcat"?"mock test":"quiz"}</button></div>`}
+ else h+=`<h2>Quick revision checklist</h2><details><summary>Before every exam</summary><p>Revise formulas, definitions and equations; solve 20 MCQs per subject; review mistakes; sleep well.</p></details>`;
+ A.innerHTML=h}
+let st;function shuf(a){return a.map(x=>[Math.random(),x]).sort((x,y)=>x[0]-y[0]).map(x=>x[1])}
+function startQ(keys,timed){const p=shuf(keys.flatMap(k=>Q[k]));st={p,i:0,sc:0,timed,left:p.length*30,done:false,keys};
+ clearInterval(st.t);if(timed)st.t=setInterval(()=>{st.left--;const e=$("#tl");if(e)e.textContent="⏱ "+st.left+"s";if(st.left<=0)finish()},1000);show()}
+function show(){const q=st.p[st.i],o=q[1].split("|");
+ A.innerHTML=`<div class="row" style="justify-content:space-between"><b>Question ${st.i+1} / ${st.p.length}</b><span id="tl">${st.timed?"⏱ "+st.left+"s":""}</span></div><div class="bar"><div style="width:${st.i/st.p.length*100}%"></div></div><h3>${q[0]}</h3>${o.map((t,i)=>`<button class="opt" data-i="${i}">${"ABCD"[i]}. ${t}</button>`).join("")}<div id="ex"></div>`;
+ A.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{if(st.done)return;st.done=true;const i=+b.dataset.i;
+  A.querySelectorAll(".opt").forEach((x,j)=>{if(j==q[2])x.classList.add("ok")});if(i==q[2])st.sc++;else b.classList.add("no");
+  $("#ex").innerHTML=`<div class="note"><b>${i==q[2]?"Correct.":"Incorrect."}</b> ${q[3]}</div><button class="btn" id="nx">${st.i+1<st.p.length?"Next question":"See score"}</button>`;
+  $("#nx").onclick=()=>{st.done=false;st.i++;st.i<st.p.length?show():finish()}})}
+function finish(){clearInterval(st.t);const n=st.p.length,pc=Math.round(st.sc/n*100);
+ A.innerHTML=`<h2>Your score: ${st.sc} / ${n} (${pc}%)</h2><div class="bar"><div style="width:${pc}%"></div></div><p>${pc>=80?"Excellent work!":pc>=50?"Good effort — review the explanations and retry.":"Keep practising — revisit the lessons and try again."}</p><button class="btn" onclick="startQ(st.keys,st.timed)">Retry</button><a class="btn alt" href="#/">Home</a>`}
+function search(v){v=v.toLowerCase().trim();if(!v)return route();const r=[];
+ S.forEach(s=>{if((s[1]+s[2]).toLowerCase().includes(v))r.push([s[0],s[1],s[2]])});
+ Object.entries(L).forEach(([k,ls])=>ls.forEach(l=>{if((l[0]+l[1]).toLowerCase().includes(v))r.push([S.find(s=>s[0]==k)?k:(k=="logic"?"mdcat":"etea"),l[0],l[1].replace(/<[^>]+>/g,"").slice(0,90)+"…"])}));
+ A.innerHTML=`<h2>Search results for “${v}”</h2>`+(r.length?`<div class="grid">${r.map(x=>`<a class="card" href="#/s/${x[0]}"><b>${x[1]}</b><span>${x[2]}</span></a>`).join("")}</div>`:"<p>No lessons found. Try another word such as 'tense', 'pH' or 'Indus'.</p>")}
+function route(){if(st)clearInterval(st.t);const h=location.hash.split("/");document.querySelectorAll("nav a").forEach(a=>a.classList.toggle("on",a.dataset.id==h[2]));
+ h[1]=="s"?sec(h[2]):home();scrollTo(0,0)}
+$("#q").oninput=e=>search(e.target.value);addEventListener("hashchange",()=>{$("#q").value="";route()});route();
+</script></body></html>
